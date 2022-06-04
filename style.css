@@ -1,0 +1,58 @@
+body{
+  margin: 0;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  background-color: rgb(253, 140, 184);
+  color: white;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  overflow-x: hidden;
+
+  /*
+    Introduced in Internet Explorer 10.
+    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+  */
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#app {
+  padding: 1rem;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+#description{
+  position: sticky;
+  top: 20px;
+  font-family: Satoshi-Regular;
+  text-align: justify;
+}
+
+p{
+  font-family: Satoshi-Regular;
+  font-size: 10pt;
+  column-count: 2;
+  column-gap: 40px;
+  width: 50vw;
+}
+
+.draggable {
+  position: relative;
+  touch-action: none;
+  user-select: none;
+  z-index: 2;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  font-size: 2em;
+}
