@@ -35,7 +35,7 @@ a{
   text-align: justify;
 }
 
-p{
+#description p{
   font-family: Satoshi-Regular;
   font-size: 10pt;
   column-count: 2;
