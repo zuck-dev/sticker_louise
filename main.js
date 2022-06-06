@@ -67,16 +67,15 @@ function imageCreate(jsonObj) {
 }
 
 
-var requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+var requestURL = 'https://raw.githubusercontent.com/zuck-dev/sticker_louise/main/public/imageList.json';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
-request.responseType = 'json';
+request.responseType = 'txt';
 request.send();
 
 request.onload = function() {
-  var superHeroes = request.response;
+  var superHeroes = eval(request.response);
   console.log(superHeroes);
-  populateHeader(superHeroes);
-  showHeroes(superHeroes);
+  
 }
 
