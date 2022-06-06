@@ -58,7 +58,7 @@ window.dragMoveListener = dragMoveListener
 
 function imageCreate(jsonObj) {
   jsonObj.forEach(image => {
-    console.log(image.url);
+    console.log(image.name);
     var img = document.createElement('img');
     img.src = image.url;
     img.alt = image.name;
