@@ -56,10 +56,27 @@ function dragMoveListener (event) {
 // this function is used later in the resizing and gesture demos
 window.dragMoveListener = dragMoveListener
 
-var img = document.createElement('img');
-img.src = '/images/Sans titre - 1-02.png';
-img.className = 'draggable';
-img.style.position = 'absolute';
-img.style.top = `${getRandomInt(500)}px`;
-img.style.left = `${getRandomInt(1000)}px`;
-document.getElementById('app').appendChild(img);
+function imageCreate(jsonObj) {
+  var img = document.createElement('img');
+  img.src = '/images/Sans titre - 1-02.png';
+  img.className = 'draggable';
+  img.style.position = 'absolute';
+  img.style.top = `${getRandomInt(500)}px`;
+  img.style.left = `${getRandomInt(1000)}px`;
+  document.getElementById('app').appendChild(img); 
+}
+
+
+var requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+
+request.onload = function() {
+  var superHeroes = request.response;
+  console.log(superHeroes);
+  populateHeader(superHeroes);
+  showHeroes(superHeroes);
+}
+
