@@ -57,25 +57,30 @@ function dragMoveListener (event) {
 window.dragMoveListener = dragMoveListener
 
 function imageCreate(jsonObj) {
-  var img = document.createElement('img');
-  img.src = '/images/Sans titre - 1-02.png';
-  img.className = 'draggable';
-  img.style.position = 'absolute';
-  img.style.top = `${getRandomInt(500)}px`;
-  img.style.left = `${getRandomInt(1000)}px`;
-  document.getElementById('app').appendChild(img); 
+  jsonObj.forEach(image => {
+    console.log(image.url);
+    var img = document.createElement('img');
+    img.src = image.url;
+    img.alt = image.name;
+    img.className = 'draggable';
+    img.style.position = 'absolute';
+    img.style.top = `${getRandomInt(500)}px`;
+    img.style.left = `${getRandomInt(1000)}px`;
+    document.getElementById('app').appendChild(img); 
+  });
 }
 
 
-var requestURL = 'https://raw.githubusercontent.com/zuck-dev/sticker_louise/main/public/imageList.json';
+var requestURL = 'https://raw.githubusercontent.com/zuck-dev/sticker_louise/main/public/imagesList.json';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'txt';
 request.send();
 
 request.onload = function() {
-  var superHeroes = eval(request.response);
-  console.log(superHeroes);
-  
+  var Image = eval(request.response);
+  console.table(Image);
+  imageCreate(Image)
+
 }
 
