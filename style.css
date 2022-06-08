@@ -57,7 +57,8 @@ header{
   flex-direction: row;
   align-items: baseline;
   font-size: 2em;
-  margin-top:-10px;
+  margin-top: auto;
+
 }
 
 img{
