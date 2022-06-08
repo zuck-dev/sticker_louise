@@ -38,10 +38,10 @@ a{
 
 #description p{
   font-family: Satoshi-Regular;
-  font-size: 10pt;
+  font-size: 9pt;
   column-count: 2;
-  column-gap: 40px;
-  width: 50vw;
+  column-gap: 30px;
+  width:42vw;
   margin-top:-30px;
 }
 
@@ -57,9 +57,9 @@ header{
   flex-direction: row;
   align-items: baseline;
   font-size: 2em;
-
+  
 }
 
 img{
-  max-width: 30%;
+  max-width: 20%;
 }
